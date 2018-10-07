@@ -24,10 +24,10 @@ public class HotelWorldClockSystem {
     public static void main(String []arg) {
     	    HotelWorldClockSystem hwcs = new HotelWorldClockSystem();
     	    CityClock beijing = new CityClock(8);
-    	    CityClock london = new CityClock(1);
+    	    CityClock london = new CityClock(0);
     	    CityClock moscow = new CityClock(3);
     	    CityClock sydney = new CityClock(10);
-    	    CityClock newYork = new CityClock(-4);
+    	    CityClock newYork = new CityClock(-5);
     	    int utcOffset = 8;
     	    PhoneClock pc = new PhoneClock(utcOffset);
     	    hwcs.attach(beijing);
