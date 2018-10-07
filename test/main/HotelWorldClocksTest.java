@@ -16,9 +16,9 @@ public class HotelWorldClocksTest {
     }
 
     @Test
-    public void the_time_of_clock_London_should_be_2_after_the_phone_clock_is_set_to_9_Beijing_time() {
+    public void the_time_of_clock_London_should_be_1_after_the_phone_clock_is_set_to_9_Beijing_time() {
         // Arrange
-        CityClock londonClock = new CityClock(1);
+        CityClock londonClock = new CityClock(0);
         hotelWorldClockSystem.attach(londonClock);
 
         // Act
@@ -26,13 +26,13 @@ public class HotelWorldClocksTest {
         phoneClock.setTime(9);
 
         // Assert
-        assertEquals(2, londonClock.getTime());
+        assertEquals(1, londonClock.getTime());
     }
 
     @Test
-    public void the_time_of_clock_NewYork_should_be_21_after_the_phone_clock_is_set_to_9_Beijing_time() {
+    public void the_time_of_clock_NewYork_should_be_20_after_the_phone_clock_is_set_to_9_Beijing_time() {
         // Arrange
-        CityClock newYorkClock = new CityClock(-4);
+        CityClock newYorkClock = new CityClock(-5);
         hotelWorldClockSystem.attach(newYorkClock);
 
         // Act
@@ -40,14 +40,14 @@ public class HotelWorldClocksTest {
         phoneClock.setTime(9);
 
         // Assert
-        assertEquals(21, newYorkClock.getTime());
+        assertEquals(20, newYorkClock.getTime());
     }
 
     @Test
-    public void the_time_of_clock_London_and_NewYork_should_be_2_and_21_respectively_after_the_phone_clock_is_set_to_9_Beijing_time() {
+    public void the_time_of_clock_London_and_NewYork_should_be_1_and_20_respectively_after_the_phone_clock_is_set_to_9_Beijing_time() {
         // Arrange
-        CityClock londonClock = new CityClock(1);
-        CityClock newYorkClock = new CityClock(-4);
+        CityClock londonClock = new CityClock(0);
+        CityClock newYorkClock = new CityClock(-5);
         hotelWorldClockSystem.attach(londonClock);
         hotelWorldClockSystem.attach(newYorkClock);
 
@@ -56,8 +56,8 @@ public class HotelWorldClocksTest {
         phoneClock.setTime(9);
 
         // Assert
-        assertEquals(2, londonClock.getTime());
-        assertEquals(21, newYorkClock.getTime());
+        assertEquals(1, londonClock.getTime());
+        assertEquals(20, newYorkClock.getTime());
     }
     
     @Test
